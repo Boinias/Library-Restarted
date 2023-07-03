@@ -1,16 +1,19 @@
 
+let library = []
 
 
 let addBook = document.getElementById('addBook');
-let form = document.getElementById('formDiv');
+let formDiv = document.getElementById('formDiv');
+let form = document.getElementById('form');
 let dimBg = document.getElementById('dimBg')
+
 addBook.addEventListener('click', () => {
-    form.style.display = 'flex';
+    formDiv.style.display = 'flex';
     dimBg.style.display = 'flex';
 })
 
 dimBg.addEventListener('click', () => {
-    form.style.display = 'none';
+    formDiv.style.display = 'none';
     dimBg.style.display = 'none';
     clearForm();
 })
@@ -26,3 +29,24 @@ function clearForm () {
         inputs[i].checked = false;
     }
 }
+
+function ConstructBook (name, author, pages, readStatus) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let name = document.getElementById('name').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let readStatus = document.getElementById('readStatus').value;
+
+    var newObj = new ConstructBook (name, author, pages, readStatus);
+
+    library.push(newObj)
+    console.log(library)
+})
