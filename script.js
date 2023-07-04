@@ -54,7 +54,8 @@ form.addEventListener('submit', (e) => {
     let name = document.getElementById('name').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
-    let readStatus = document.getElementById('readStatus').value;
+    let readStatus = document.getElementById('readStatus').checked;
+    readStatus = (readStatus===true) ?  'read' : 'unread';
 
     var newObj = new ConstructBook (name, author, pages, readStatus);
     library.push(newObj)
@@ -104,6 +105,8 @@ function displayObj() {
         } else if (library[bookId].readStatus === 'unread') {
           newObj.style.backgroundColor = 'red';
         }
+        displayObj ()
+        console.log(library)
       });
       newObj.appendChild(readBtn);
   

@@ -61,6 +61,7 @@ body {
     margin: 5px;
     justify-content: start;
     background-color: white;
+    border-radius: 10px;
     color: black;
     white-space: 'nowrap';
 }
@@ -80,7 +81,6 @@ button {
     Display: inline-block;
     Border: none;
     Padding: 4px 12px;
-    margin-bottom: 30px;
     Font-size: 20px;
     Font-weight: normal;
     Text-align: center;
