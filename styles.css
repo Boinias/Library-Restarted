@@ -22,6 +22,15 @@ body {
     align-items: center;
 }
 
+#library {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+grid-auto-rows: 400px;
+grid-auto-flow: row;
+gap: 10px;
+justify-content: center;
+}
+
 #formDiv {
     display: none;
     position: fixed;
@@ -42,6 +51,14 @@ body {
     gap: 5px;
 }
 
+input:not(:focus):not(:placeholder-shown):invalid {
+    border: 2px solid red;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  border: 2px solid green;
+}
+  
 #dimBg {
     width: 100vw;
     height: 100vh;
@@ -56,10 +73,12 @@ body {
 
 .details {
     width: 250px;
-    height: fit-content;
+    height: 39px;
     gap: 5px;
     margin: 5px;
+    padding: 5px;
     justify-content: start;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
     color: black;
@@ -70,11 +89,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
-    height: 350px;
+    width: fit-content;
+    height: fit-content;
     gap: 20px;
     padding: 20px 50px;
-    margin: 5px;
+    margin: 50px;
 }
 
 button {

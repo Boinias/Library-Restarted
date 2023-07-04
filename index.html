@@ -17,13 +17,13 @@
         <form id="form">
 
             <label for="author">Author</label>
-            <input type="text" id="author" placeholder="Author">
+            <input type="text" id="author" placeholder="Author" required>
 
             <label for="name">Title</label>
-            <input type="text" id="name" placeholder="Title">
+            <input type="text" id="name" placeholder="Title" required>
 
             <label for="pages">Number of Pages</label>
-            <input type="tel" id="pages" placeholder="123">
+            <input type="tel" pattern="^\d+$" id="pages" placeholder="123" required>
 
             <div id="checkbox">
                 <label for="readStatus">Read?</label>
