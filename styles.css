@@ -53,3 +53,37 @@ body {
     left: 0;
     z-index: 1;
 }
+
+.details {
+    width: 250px;
+    height: fit-content;
+    gap: 5px;
+    margin: 5px;
+    justify-content: start;
+    background-color: white;
+    color: black;
+    white-space: 'nowrap';
+}
+
+.newObjs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    gap: 20px;
+    padding: 20px 50px;
+    margin: 5px;
+}
+
+button {
+    Display: inline-block;
+    Border: none;
+    Padding: 4px 12px;
+    margin-bottom: 30px;
+    Font-size: 20px;
+    Font-weight: normal;
+    Text-align: center;
+    Cursor: pointer;
+    Border-radius: 4px;
+}
