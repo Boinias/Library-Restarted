@@ -88,14 +88,17 @@ function displayObj() {
           let newDetail = document.createElement('div');
           newDetail.setAttribute('data-id', key); // Corrected line
           newDetail.className = 'details';
+          newDetail.style.overflowX = 'scroll';
           newDetail.textContent = book[key];
           newObj.appendChild(newDetail);
         }
       }
+
       libraryDiv.appendChild(newObj);
       let readBtn = document.createElement('button');
       readBtn.className = 'readBtn'; // Make sure the class name is a string
       readBtn.textContent = 'Change Read Status';
+
       readBtn.addEventListener('click', (e) => {
         var book = e.target.parentNode;
         var bookId = parseInt(book.dataset.id);
@@ -108,6 +111,7 @@ function displayObj() {
         displayObj ()
         console.log(library)
       });
+      
       newObj.appendChild(readBtn);
   
       let deleteBtn = document.createElement('button');
