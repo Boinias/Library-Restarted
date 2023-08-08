@@ -31,20 +31,25 @@ function clearForm () {
     }
 }
 
-function ConstructBook (name, author, pages, readStatus) {
+class ConstructBookMethods {
+    changeReadStatus () {
+      if (this.readStatus==='read') {
+          this.readStatus='unread';
+      } else if (this.readStatus==='unread') {
+          this.readStatus='read';
+  }
+}};
+
+class ConstructBook extends ConstructBookMethods {
+  constructor (name, author, pages, readStatus) {
+    super();
     this.name = name;
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
+    this.changeReadStatus()
+  }
 }
-
-ConstructBook.prototype.changeReadStatus = function () {
-    if (this.readStatus==='read') {
-        this.readStatus='unread';
-    } else if (this.readStatus==='unread') {
-        this.readStatus='read';
-}
-};
 
 
 
@@ -93,12 +98,11 @@ function displayObj() {
           newObj.appendChild(newDetail);
         }
       }
-
+      
       libraryDiv.appendChild(newObj);
       let readBtn = document.createElement('button');
       readBtn.className = 'readBtn'; // Make sure the class name is a string
       readBtn.textContent = 'Change Read Status';
-
       readBtn.addEventListener('click', (e) => {
         var book = e.target.parentNode;
         var bookId = parseInt(book.dataset.id);
@@ -111,7 +115,6 @@ function displayObj() {
         displayObj ()
         console.log(library)
       });
-      
       newObj.appendChild(readBtn);
   
       let deleteBtn = document.createElement('button');
